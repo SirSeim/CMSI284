@@ -69,7 +69,7 @@
     cur:	0
     up:		256
     start:  LOAD	cur
-    		OUT		8
+    		OUT		0x8
             ADD		add
             STORE	cur
             SUB 	up
@@ -98,9 +98,9 @@
     num1:	0
     num2:	0
     hold:	0
-    start:  IN		100
+    start:  IN		0x100
     		STORE	num1
-            IN		100
+            IN		0x100
             STORE	num2
 	loop:	LOAD	num1
     		STORE	hold
@@ -112,7 +112,7 @@
             LOAD	num1
             JGZ		loop
     out:	LOAD	num2
-    		OUT		200
+    		OUT		0x200
     end:	JUMP	end
             \end{lstlisting}
         
@@ -123,17 +123,17 @@
     acc:	0
     mem:	0
     start:  STORE	acc
-    		LOAD	222A
+    		LOAD	0x222A
             STORE	mem
             LOAD	acc
-            STORE	222A
+            STORE	0x222A
             LOAD	mem
             \end{lstlisting}
             
         \item %8
         	\begin{lstlisting}[language=C, caption={Jump}]
-            JZ		837BBE1
-            JGZ		837BBE1
+            JZ		0x837BBE1
+            JGZ		0x837BBE1
             \end{lstlisting}
         
     \end{enumerate}
