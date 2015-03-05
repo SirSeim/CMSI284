@@ -31,7 +31,7 @@
 	\setlength{\saveparindent}{\parindent}
 	\raggedright
 	\setlength{\parindent}{\saveparindent}
-	\sethead{Homework 2}{Adrian Lu, Josh Kuroda, \& Edward Seim}{CMSI 284}{Dr. Ray Toal}{March 5, 2015}
+	\sethead{Homework 2}{Adrian Lu, Josh Kuroda, \& Edward Seim}{CMSI 284}{Toal}{March 5, 2015}
     
 	\doublespacing
     \begin{center}
@@ -40,19 +40,28 @@
         \item %1
         	AND, OR, NOT: X = A + BC, Y = AC + \={A}\={B}
             \newline
-            NAND: X = \={A}BC, Y = ABAC
+            NAND: X = (\={A}$\overline{BC}$)', Y = ((\={A}\={B})'$\overline{AC}$)'
         \item %2
             The circuit is as follows:\newline \includegraphics{Circuit1.png}
         \item %3
         	\begin{enumerate}
-            	\item %a
-                \item %b
-                \item %c
-                \item %d
-                \item %e
-                \item %f
+            	\item 
+                	AND with 55555555
+                \item 
+                	OR with 00000007
+                \item 
+                	AND with 00000007
+                \item 
+                	AND with 00000000
+                    \newline
+                    OR with FFFFFFFF
+                \item 
+                	XOR with C0000000
+                \item 
+                	AND with FFFFFFF8
             \end{enumerate}
-            
+        
+        \pagebreak
         \item %4
         	\begin{lstlisting}[language=C, caption={0 - 255}]
             JUMP	start
@@ -106,7 +115,8 @@
     		OUT		200
     end:	JUMP	end
             \end{lstlisting}
-            
+        
+        \pagebreak
         \item %7
         	\begin{lstlisting}[language=C, caption={Swap Accumulator and 0x222A}]
             JUMP	start
