@@ -5,33 +5,41 @@
 #define max(a,b) a<b ? b : a
 
 char* buff_string (char* first, char* second){
-    char* result = "";
     int max_length = max(strlen(first), strlen(second));
     bool first_bigger = strlen(first) > strlen(second);
+    char* result = (char*)malloc(max_length + 1);
+    printf("%s\n%s\n", first, second);
 
     for (int i = 0; i < max_length; i++) {
         if (first_bigger) {
             if (i < strlen(second) && first[i] < second[i]) {
-                result += second[i];
+                result[i] = second[i];
             } else {
-                result += first[i];
+                result[i] = first[i];
             }
         } else {
             if (i < strlen(first) && second[i] < first[i]) {
-                result += first[i];
+                result[i] = first[i];
             } else {
-                result += second[i];
+                result[i] = second[i];
             }
         }
-        //printf("bull: %s\n", result);
     }
     return result;
 }
 
-int main() {
+int main(int argc, char** argv) {
     char* first = "first";
     char* second = "second";
-    printf("%s\n", buff_string(first, second));
+    if (argc > 2) {
+        first = argv[1];
+        second = argv[2];
+        
+    }
+
+    char* buffed = buff_string(first, second);
+    printf("%s\n", buffed);
+    free(buffed);
 
     return 0;
 }
