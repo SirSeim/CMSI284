@@ -1,17 +1,27 @@
 #include <stdio.h>
-#include <string.h>
 #include <stdlib.h>
+#include <string.h>
 
-char* rotate (char* s, int k) {
-    int length = strlen(s);
-    int i = 0;
-    char rotated[length + 1];
-    char* result = rotated;
+char* movin (char* word, unsigned int integer){
+    int length = strlen(word);
+    int move_number = integer % length;
+    char* result = (char*)malloc(length + 1);
+    
+    for (int j = 0; j < (length - move_number); j++) {
+        result[j] = word[j + move_number];
+    }
 
-    while(i < k)
+    for (int j = 0; j < move_number; j++) {
+        result[length - move_number + j] = word[j];
+    }
+    return result;
 }
 
 int main(int argc, char** argv) {
-    printf("%c\n", rotate(argv[1], 69));
+    char* word = argv[1];
+    unsigned int integer = atoi(argv[2]);
+    char* switcheroo = movin (word, integ);
+    printf("%s\n", switcheroo);
+    free(switcheroo);
     return 0;
 }
