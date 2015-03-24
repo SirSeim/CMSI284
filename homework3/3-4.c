@@ -20,8 +20,10 @@ char* movin (char* word, unsigned int integer){
 int main(int argc, char** argv) {
     char* word = argv[1];
     unsigned int integer = atoi(argv[2]);
-    char* switcheroo = movin (word, integ);
+    char* switcheroo = movin (word, integer);
+    
     printf("%s\n", switcheroo);
     free(switcheroo);
+
     return 0;
 }
