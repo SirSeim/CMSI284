@@ -31,11 +31,12 @@ char* buff_string (char* first, char* second){
 int main(int argc, char** argv) {
     char* first = "first";
     char* second = "second";
-    if (argc > 2) {
-        first = argv[1];
-        second = argv[2];
-        
+    if (argc != 3) {
+        printf("GIVE ME TWO STRINGS YOU IDIOT!\n");
+        return 69;
     }
+    first = argv[1];
+    second = argv[2];
 
     char* buffed = buff_string(first, second);
     printf("%s\n", buffed);
