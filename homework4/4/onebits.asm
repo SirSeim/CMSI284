@@ -3,10 +3,10 @@
 
 onebits:
         ;x = x - ((x >> 1) & 0x55555555);
-        mov     eax, edi        ; store in another register
-        shr     edi, 1          ; x >> 1
-        and     edi, 0x55555555 ; x' & 0x55555555
-        sub     eax, edi        ; x - x"
+        mov     eax, edi        
+        shr     edi, 1  
+        and     edi, 0x55555555 
+        sub     eax, edi        
 
         ;x = (x & 0x33333333) + ((x >> 2) & 0x33333333)
         mov     edi, eax
