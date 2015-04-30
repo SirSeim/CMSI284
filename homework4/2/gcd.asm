@@ -1,5 +1,4 @@
         global gcd
-        extern asserts
         section .text
 
 gcd:
