@@ -14,4 +14,3 @@ _algorithm:
         mov     rdi, rsi        ; x, y = y, x
         mov     rsi, rdx        ; remainder is stored in rdx so make it 2nd param
         jmp     _gcd
-        ret
